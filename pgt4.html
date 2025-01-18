@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happiest Birthday Pragatiii!!!</title>
+    <style>
+        /* Body Styling */
+        body {
+            background-color: pink;
+            color: darkpink;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            height: 100vh;
+            position: relative; /* Important for positioning firework */
+            overflow: auto; /* Allow scrolling */
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 3em;
+            margin-top: 50px;
+        }
+
+        /* Firework animation */
+        @keyframes fireworks {
+            0% {
+                transform: scale(0);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Firework explosion styling */
+        .firework {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #ff1493;
+            border-radius: 50%;
+            animation: fireworks 1.5s ease-out infinite;
+        }
+
+        /* Add glowing effect for firecrackers */
+        .firework {
+            animation-duration: 0.6s;
+            box-shadow: 0 0 10px #ff1493, 0 0 20px #ff69b4;
+        }
+
+        /* Image Styling */
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+
+        /* Button Styling */
+        .thank-you-btn {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-family: 'Arial', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .thank-you-btn:hover {
+            background-color: #ff1493;
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happiest Birthday, Pragatiii! 🎂</h1>
+    <p>Happy Birthday to my amazing best friend! 🎉💖 You’re such a bright and beautiful person, inside and out. I wish you a year full of love, laughter, and all the happiness you deserve. May all your dreams come true today and always. Have the most unforgettable birthday!!!</p>
+    <img src="C:\Users\garud\Downloads\pgt img.jpg" alt="Happy Birthday Image" onclick="triggerFireworks()">
+    <p> Click on yr pic multiple times!!</p>
+    <p class="heart">💖 Stay awesome, stay fabulous! 💖</p>
+    <p>- Your Bsf 💕</p>
+    <p>- Rajan</p>
+
+    <footer>
+        <button class="thank-you-btn" onclick="alert('Welcome Pgt, Always there for uhhh!')">Thank You!!</button>
+    </footer>
+
+    <script>
+        function triggerFireworks() {
+            const numFireworks = 5; // Number of fireworks to show
+            for (let i = 0; i < numFireworks; i++) {
+                createFirework();
+            }
+        }
+
+        // Function to create firework elements
+        function createFirework() {
+            const firework = document.createElement("div");
+            firework.classList.add("firework");
+
+            // Random position for firework
+            const xPos = Math.random() * window.innerWidth;
+            const yPos = Math.random() * window.innerHeight;
+
+            // Random size and animation speed for variety
+            const size = Math.random() * (100 - 50) + 50; // Random size between 50 and 100px
+            firework.style.width = `${size}px`;
+            firework.style.height = `${size}px`;
+            firework.style.top = `${yPos}px`;
+            firework.style.left = `${xPos}px`;
+
+            // Append the firework to the body
+            document.body.appendChild(firework);
+
+            // Remove the firework after animation
+            setTimeout(() => {
+                firework.remove();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+
+
